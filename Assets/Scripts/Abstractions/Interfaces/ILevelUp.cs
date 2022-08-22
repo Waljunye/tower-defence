@@ -5,5 +5,5 @@ using UnityEngine;
 public interface ILevelUp 
 {
     void TowerUpgrade();
-    void Coins();
+    
 }

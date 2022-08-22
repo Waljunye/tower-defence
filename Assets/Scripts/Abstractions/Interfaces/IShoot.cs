@@ -4,6 +4,5 @@ using UnityEngine;
 
 interface IShoot 
 {
-    void MakeDamage();
-    
+    void MakeDamage();    
 }
