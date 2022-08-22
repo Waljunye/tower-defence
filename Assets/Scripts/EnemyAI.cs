@@ -4,10 +4,10 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent m_Agent;
-    private Tower m_tower;
+    private GameObject m_tower;
     private void Awake()
     {
-        m_tower = FindObjectOfType<Tower>();
+        m_tower = GameObject.FindGameObjectWithTag("Finish");
         
     }
     private void Start()
