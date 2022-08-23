@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Tower :  IRotation, IShoot, ILevelUp, ITowerDamageRange
+public abstract class Tower :  IRotation, IShoot, ILevelUp
 {
-    public void TowerDamageRange()
-    {
-
-    }
 
     public void MakeDamage()
     {
