@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class EnemyHealth : IHealth
 {
-    public float Max { get; private set; }
+    public float MaxHealth { get; private set; }
 
-    public float Current { get; private set; }
+    public float CurrentHealth { get; private set; }
     private event Action _onZeroHp;
 
     public void TakeDamage(float damageValue)
     {
-        Current -= damageValue;
-        if(Current <= 0)
+        CurrentHealth -= damageValue;
+        if(CurrentHealth <= 0)
         {
             _onZeroHp?.Invoke();
         }
     }
     public EnemyHealth(float maxHp, Action OnZeroHp = null)
     {
-        Max = maxHp;
-        Current = Max;
+        MaxHealth = maxHp;
+        CurrentHealth = MaxHealth;
         _onZeroHp += OnZeroHp;
     }
 

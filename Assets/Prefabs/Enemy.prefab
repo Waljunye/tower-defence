@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5572487011527797666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.763, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 7607044407838269707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17.876, y: 1.06, z: 14.262}
-  m_LocalScale: {x: 0.726, y: 0.726, z: 0.726}
+  m_LocalScale: {x: 0.46290487, y: 0.46290487, z: 0.46290487}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4869500478529483432}
@@ -143,12 +143,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7607044407838269707}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2.0206401
+  m_Height: 2.0413349
   m_Direction: 1
-  m_Center: {x: 0, y: 0.012658844, z: 0}
+  m_Center: {x: 0, y: 0.7593209, z: 0}
 --- !u!195 &6322834655611877493
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -184,4 +184,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Agent: {fileID: 6322834655611877493}
-  m_Tower: {fileID: 0}
