@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f999e43a19240c409c74fda3386b51f, type: 2}
+  - {fileID: 2100000, guid: d4ce5111638347f4d97da066e4c09de0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6322834655611877493}
   - component: {fileID: -5413017775905812268}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: DefaultSecond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7607044407838269707}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2.0206401
@@ -184,4 +184,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Agent: {fileID: 6322834655611877493}
-  m_Tower: {fileID: 0}
