@@ -1,15 +1,20 @@
 using UnityEngine;
-
-public class SpawnManager : MonoBehaviour
+namespace Test
 {
-    [SerializeField] private GameObject m_EnemyObject;
-    [SerializeField] private Transform m_SpawnPos;
-    void Start()
+
+    public class SpawnManager : MonoBehaviour
     {
-        Spawn();
-    }
-    private void Spawn()
-    {
-        Instantiate(m_EnemyObject,m_SpawnPos.position,Quaternion.identity);
+        [SerializeField] private GameObject m_EnemyObject;
+        [SerializeField] private Transform m_SpawnPos;
+        void Start()
+        {
+            Spawn();
+            
+            Spawn();
+        }
+        private void Spawn()
+        {
+            Instantiate(m_EnemyObject, m_SpawnPos.position, Quaternion.identity);
+        }
     }
 }
