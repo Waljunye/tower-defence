@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Tower :  IRotation, IShoot, ILevelUp
 {
+    
 
     public void MakeDamage()
     {
@@ -15,10 +16,9 @@ public abstract class Tower :  IRotation, IShoot, ILevelUp
        
     }
 
+
     public void TowerUpgrade()
     {
 
     }
-
-   
 }
