@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour, IMove, IHealth
     public float MaxHealth { get; private set; }
     public float CurrentHealth { get; private set; }
     public event Action OnMove;
-    public Vector3 destination;
+    [HideInInspector]public Vector3 destination;
 
     public void MoveToTarget(Vector3 position)
     {
