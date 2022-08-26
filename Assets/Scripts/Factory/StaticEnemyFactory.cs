@@ -15,7 +15,7 @@ public static class StaticEnemyFactory
                 enemy = Resources.Load<Enemy>("Enemy/Enemy_01");
                 break;
             case EnemyType.Second:
-                enemy = Resources.Load<Enemy>("Enemy/DefaultSecond");
+                enemy = Resources.Load<Enemy>("Enemy/Enemy_02");
                 break;
             default:
                 throw new Exception();

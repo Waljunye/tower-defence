@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,16 +6,18 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject m_EnemyObject;
     [SerializeField] private Transform m_SpawnPos;
-    private Enemy enemy;
-    private 
-    void Start()
+    private Vector3 globaldestination;
+    private void Start()
     {
-        Spawn();
+        globaldestination = GameObject.FindGameObjectWithTag("Finish").transform.position;
+        StartCoroutine(Spawn());
     }
-    private void Spawn()
+    private IEnumerator Spawn()
     {
-        enemy = StaticEnemyFactory.Create(new EnemyHealth(100f), 2f, EnemyType.First, m_SpawnPos);
-        enemy.destination = GameObject.FindGameObjectWithTag("Finish").transform.position;
-        Debug.Log(enemy.destination);
-    }
+        Enemy enemy1 = StaticEnemyFactory.Create(new EnemyHealth(100f), 2f, EnemyType.First, m_SpawnPos);
+        enemy1.destination = globaldestination;
+        yield return new WaitForSeconds(5);
+        Enemy enemy2 = StaticEnemyFactory.Create(new EnemyHealth(100f), 2f, EnemyType.Second, m_SpawnPos);
+        enemy2.destination = globaldestination;
+    } 
 }
