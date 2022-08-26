@@ -6,14 +6,15 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject m_EnemyObject;
     [SerializeField] private Transform m_SpawnPos;
     private Enemy enemy;
+    private 
     void Start()
     {
         Spawn();
     }
     private void Spawn()
     {
-        enemy = Instantiate(m_EnemyObject, m_SpawnPos.position, m_SpawnPos.rotation).GetComponent<Enemy>();
-        enemy.Speed = 3f;
+        enemy = StaticEnemyFactory.Create(new EnemyHealth(100f), 2f, EnemyType.First, m_SpawnPos);
         enemy.destination = GameObject.FindGameObjectWithTag("Finish").transform.position;
+        Debug.Log(enemy.destination);
     }
 }

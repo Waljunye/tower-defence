@@ -4,25 +4,24 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
-public abstract class Enemy : MonoBehaviour, IMove, IHealth
+public abstract class Enemy : MonoBehaviour
 {
-    protected IMove _moveImplementation;
-    protected IHealth _healthImplementation;
+    public IMove MoveImplementation;
+    public IHealth HealthImplementation;
 
-    public float Speed { get; set; }
-    public float MaxHealth { get; private set; }
-    public float CurrentHealth { get; private set; }
     public event Action OnMove;
     [HideInInspector]public Vector3 destination;
 
     public void MoveToTarget(Vector3 position)
     {
-        _moveImplementation?.MoveToTarget(position);
+        MoveImplementation?.MoveToTarget(position);
+        Debug.Log(MoveImplementation);
     }
 
     public void TakeDamage(float amount)
     {
-        _healthImplementation?.TakeDamage(amount);
+        HealthImplementation?.TakeDamage(amount);
+        Debug.Log(HealthImplementation);
     }
     private void Update()
     {

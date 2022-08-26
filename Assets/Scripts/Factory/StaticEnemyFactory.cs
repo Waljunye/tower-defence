@@ -1,28 +1,29 @@
 using UnityEngine;
 using System;
 
- public enum EnemyType { one,two}
+ public enum EnemyType { First, Second }
 public static class StaticEnemyFactory 
 {
-    public static GameObject Create(EnemyType type)
+    public static Enemy Create(IHealth healthImplementation, float speed, EnemyType type, Transform spawnPosition)
     {
-        GameObject enemy;
+        Enemy enemy;
 
         switch (type)
         {
-            case EnemyType.one:
+            case EnemyType.First:
 
-                enemy = Resources.Load<GameObject>("Enemy/Default");
-                enemy = UnityEngine.Object.Instantiate(enemy);
-                return enemy;
-            case EnemyType.two:
-                enemy = Resources.Load<GameObject>("Enemy/DefaultSecond");
-                enemy = UnityEngine.Object.Instantiate(enemy);
-                return enemy;
+                enemy = Resources.Load<Enemy>("Enemy/Enemy_01");
+                break;
+            case EnemyType.Second:
+                enemy = Resources.Load<Enemy>("Enemy/DefaultSecond");
+                break;
             default:
                 throw new Exception();
                
         }
+        enemy = UnityEngine.Object.Instantiate(enemy, spawnPosition.position, spawnPosition.rotation);
+        enemy.HealthImplementation = healthImplementation;
+        enemy.MoveImplementation = new EnemyNavMeshMove(enemy.gameObject.GetOrAddComponent<UnityEngine.AI.NavMeshAgent>(), speed);
+        return enemy;
     }
-   
 }

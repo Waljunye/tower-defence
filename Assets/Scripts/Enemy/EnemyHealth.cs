@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class EnemyHealth : IHealth
 {
-    public float MaxHealth { get; private set; }
-
-    public float CurrentHealth { get; private set; }
+    public float MaxHealth { get; protected set; }
+    public float CurrentHealth { get; protected set; }
     private event Action _onZeroHp;
 
     public void TakeDamage(float damageValue)
