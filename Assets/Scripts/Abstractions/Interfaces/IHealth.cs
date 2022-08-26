@@ -5,8 +5,8 @@ using UnityEngine;
 
 public interface IHealth
 {
-    float Max { get; }
-    float Current { get; }
+    float MaxHealth { get; }
+    float CurrentHealth { get; }
     void TakeDamage(float amount);
 }
 

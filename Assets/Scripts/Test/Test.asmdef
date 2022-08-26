@@ -1,8 +1,8 @@
 {
-    "name": "Enemy",
+    "name": "Test",
     "rootNamespace": "",
     "references": [
-        "GUID:6d8101a447902444f94ea674219ae73a",
+        "GUID:ad6fb1597e17cca4d9c9ec9b0e3dcbf9",
         "GUID:c103ce5946ecdde47a280bbc09c7c75d"
     ],
     "includePlatforms": [],
