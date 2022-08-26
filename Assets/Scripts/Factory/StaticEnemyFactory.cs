@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-
+using UnityEngine.AI;
  public enum EnemyType { First, Second }
 public static class StaticEnemyFactory 
 {
@@ -11,7 +11,6 @@ public static class StaticEnemyFactory
         switch (type)
         {
             case EnemyType.First:
-
                 enemy = Resources.Load<Enemy>("Enemy/Enemy_01");
                 break;
             case EnemyType.Second:
@@ -23,7 +22,7 @@ public static class StaticEnemyFactory
         }
         enemy = UnityEngine.Object.Instantiate(enemy, spawnPosition.position, spawnPosition.rotation);
         enemy.HealthImplementation = healthImplementation;
-        enemy.MoveImplementation = new EnemyNavMeshMove(enemy.gameObject.GetOrAddComponent<UnityEngine.AI.NavMeshAgent>(), speed);
+        enemy.MoveImplementation = new EnemyNavMeshMove(enemy.gameObject.GetOrAddComponent<NavMeshAgent>(), speed);
         return enemy;
     }
 }

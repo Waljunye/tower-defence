@@ -6,6 +6,5 @@ using UnityEngine.AI;
 
 public class GroundEnemy : Enemy
 {
-    public event Action OnDeath;
     private Animator _animator;
 }

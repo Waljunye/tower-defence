@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     }
     private IEnumerator Spawn()
     {
-        Enemy enemy1 = StaticEnemyFactory.Create(new EnemyHealth(100f), 2f, EnemyType.First, m_SpawnPos);
+        Enemy enemy1 = StaticEnemyFactory.Create(new EnemyHealth(100f), 3f, EnemyType.First, m_SpawnPos);
         enemy1.destination = globaldestination;
         yield return new WaitForSeconds(5);
         Enemy enemy2 = StaticEnemyFactory.Create(new EnemyHealth(100f), 2f, EnemyType.Second, m_SpawnPos);
